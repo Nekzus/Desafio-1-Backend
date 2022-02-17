@@ -23,19 +23,19 @@ class Usuario {
     }
 }
 // Crear un usuario
-const usuario1 = new Usuario("Juan", "Perez", [
+const usuario = new Usuario("Juan", "Perez", [
     { titulo: "El señor de las moscas", autor: "William Golding" },
     { titulo: "El señor de los anillos", autor: "J.R.R. Tolkien" },
 ], ["perro", "gato"]);
 // Agregar mascota
-usuario1.addMascota = "hamster";
+usuario.addMascota = "hamster";
 // Agregar libro
-usuario1.addBoook = { titulo: "Harry Potter", autor: "J. K. Rowling" };
+usuario.addBoook = { titulo: "Harry Potter", autor: "J. K. Rowling" };
 // Mostrar datos del usuario
-console.log(usuario1);
+console.log(usuario);
 // Mostrar cantidad de mascotas 
-console.log('Cantidad de mascotas: ', usuario1.countMascotas());
+console.log('Cantidad de mascotas: ', usuario.countMascotas());
 // Mostrar nombre completo
-console.log(`Nombre Completo: ${usuario1.getFullName}`);
+console.log(`Nombre Completo: ${usuario.getFullName}`);
 // Mostrar titulos de los libros
-console.log('Titulos de libros: ', usuario1.getbookNames);
+console.log('Titulos de libros: ', usuario.getbookNames);
