@@ -1,15 +1,15 @@
-interface Libro { titulo: string; autor: string };
+type Book = { titulo: string; autor: string };
 
 class Usuario {
     nombre: string;
     apellido: string;
-    libros: Libro[];
+    libros: Book[];
     mascotas: string[];
 
     constructor(
         nombre: string,
         apellido: string,
-        libros: Libro[],
+        libros: Book[],
         mascotas: string[]
     ) {
         this.nombre = nombre;
@@ -18,15 +18,18 @@ class Usuario {
         this.mascotas = mascotas;
     }
 
-    set addBoook(libro: Libro) {
+    set addBoook(libro: Book) {
         this.libros.push(libro);
     }
+    
     set addMascota(mascota: string) {
         this.mascotas.push(mascota);
     }
+
     get getFullName(): string {
         return `${this.nombre} ${this.apellido}`;
     }
+
     get getbookNames(): string[] {
         return this.libros.map((libro) => libro.titulo);
     }
@@ -36,6 +39,7 @@ class Usuario {
     }
 }
 
+// Crear un usuario
 const usuario1 = new Usuario(
     "Juan",
     "Perez",
@@ -46,10 +50,16 @@ const usuario1 = new Usuario(
     ["perro", "gato"]
 );
 
+// Agregar mascota
 usuario1.addMascota = "hamster";
+// Agregar libro
 usuario1.addBoook = { titulo: "Harry Potter", autor: "J. K. Rowling" };
 
+// Mostrar datos del usuario
 console.log(usuario1);
-console.log("Cantidad de mascotas", usuario1.countMascotas());
-console.log("Nombre Completo: ", usuario1.getFullName);
-console.log("Titulos de libros: ", usuario1.getbookNames);
+// Mostrar cantidad de mascotas 
+console.log('Cantidad de mascotas: ', usuario1.countMascotas());
+// Mostrar nombre completo
+console.log(`Nombre Completo: ${usuario1.getFullName}`);
+// Mostrar titulos de los libros
+console.log('Titulos de libros: ', usuario1.getbookNames);
