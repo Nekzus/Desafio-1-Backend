@@ -6,7 +6,7 @@ class Usuario {
         this.libros = libros;
         this.mascotas = mascotas;
     }
-    set addBoook(libro) {
+    set addBook(libro) {
         this.libros.push(libro);
     }
     set addMascota(mascota) {
@@ -30,7 +30,7 @@ const usuario = new Usuario("Juan", "Perez", [
 // Agregar mascota
 usuario.addMascota = "hamster";
 // Agregar libro
-usuario.addBoook = { titulo: "Harry Potter", autor: "J. K. Rowling" };
+usuario.addBook = { titulo: "Harry Potter", autor: "J. K. Rowling" };
 // Mostrar datos del usuario
 console.log(usuario);
 // Mostrar cantidad de mascotas 
